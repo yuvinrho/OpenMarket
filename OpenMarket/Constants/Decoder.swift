@@ -7,12 +7,10 @@
 
 import Foundation
 
-enum Decoder {
-    static let jsonDecoder: JSONDecoder = {
-        let jsonDecoder = JSONDecoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
-        return jsonDecoder
-    }()
-}
+let jsonDecoder: JSONDecoder = {
+    let jsonDecoder = JSONDecoder()
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+    jsonDecoder.dateDecodingStrategy = .formatted(dateFormatter)
+    return jsonDecoder
+}()
