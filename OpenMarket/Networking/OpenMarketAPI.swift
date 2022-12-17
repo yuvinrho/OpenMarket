@@ -29,11 +29,11 @@ extension OpenMarketAPI: EndPoint {
         switch self {
         case .showItemList, .createItem:
             return "/products"
-        case .showItem(id: let id), .editItem(id: let id, _):
+        case .showItem(let id), .editItem(let id, _):
             return "/products/\(id)"
-        case .showItemDeletionURI(itemID: let itemID):
+        case .showItemDeletionURI(let itemID):
             return "/products/\(itemID)/archived"
-        case .deleteItem(itemDeletionURI: let itemDeletionURI):
+        case .deleteItem(let itemDeletionURI):
             return "/products/\(itemDeletionURI)"
         }
     }
@@ -54,16 +54,16 @@ extension OpenMarketAPI: EndPoint {
     var task: Task {
         switch self {
         case .showItemList(let pageNumber, let itemPerPage):
-            return .requestQuery(["page_no": pageNumber, "items_per_page": itemPerPage])
+            return .requestQuery(query: ["page_no": pageNumber, "items_per_page": itemPerPage])
         case .showItem:
             return .request
         case .createItem(let parameters, let images):
-            return .requestMultipartFormData(parameters, images: images)
+            return .requestMultipartFormData(parameters: parameters, images: images)
         case .showItemDeletionURI:
-            let parameters = ["secret": OpenMarketAPI.secret]
-            return .requestParameters(parameters)
+            let parameters = ["secret": Self.secret]
+            return .requestParameters(parameters: parameters)
         case .editItem(_, let parameters):
-            return .requestParameters(parameters)
+            return .requestParameters(parameters: parameters)
         case .deleteItem:
             return .request
         }
