@@ -70,6 +70,16 @@ extension OpenMarketAPI: EndPoint {
     }
 
     var headers: HTTPHeaders? {
-        return [:]
+        var headers = ["identifier": Self.identifier]
+        switch self {
+        case .createItem:
+            headers["Content-Type"] = "multipart/form-data"
+            return headers
+        case .showItemDeletionURI, .editItem, .deleteItem:
+            headers["application/json"] = "Content-Type"
+            return headers
+        default:
+            return nil
+        }
     }
 }
