@@ -54,7 +54,7 @@ extension OpenMarketAPI: EndPoint {
     var task: Task {
         switch self {
         case .showItemList(let pageNumber, let itemPerPage):
-            return .requestQueryParameters(["page_no": pageNumber, "items_per_page": itemPerPage])
+            return .requestQuery(["page_no": pageNumber, "items_per_page": itemPerPage])
         case .showItem:
             return .request
         case .createItem(let parameters, let images):

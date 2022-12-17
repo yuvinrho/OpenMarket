@@ -12,7 +12,7 @@ typealias Parameters = [String: Any]
 
 enum Task {
     case request
-    case requestQueryParameters(_ parameters: Parameters)
-    case requestParameters(_ parameters: Parameters)
-    case requestMultipartFormData(_ parameters: Parameters, images: [UIImage])
+    case requestQuery(query: Parameters)
+    case requestParameters(parameters: Parameters)
+    case requestMultipartFormData(parameters: Parameters, images: [UIImage])
 }
