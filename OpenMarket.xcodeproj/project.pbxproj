@@ -20,6 +20,10 @@
 		1AC6970429487841006568EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6970329487841006568EC /* MainViewController.swift */; };
 		1AC6970929487842006568EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC6970829487842006568EC /* Assets.xcassets */; };
 		1AC6970C29487842006568EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC6970A29487842006568EC /* LaunchScreen.storyboard */; };
+		1AE0A291294C4B890083BA6C /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A290294C4B890083BA6C /* EndPoint.swift */; };
+		1AE0A293294C4DDE0083BA6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A292294C4DDE0083BA6C /* HTTPMethod.swift */; };
+		1AE0A295294C4E660083BA6C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A294294C4E660083BA6C /* Task.swift */; };
+		1AE0A297294C50170083BA6C /* OpenMarketAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A296294C50170083BA6C /* OpenMarketAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		1AC6970829487842006568EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AC6970B29487842006568EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AC6970D29487842006568EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AE0A290294C4B890083BA6C /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		1AE0A292294C4DDE0083BA6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		1AE0A294294C4E660083BA6C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		1AE0A296294C50170083BA6C /* OpenMarketAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMarketAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,17 @@
 			path = JSONDecodingTest;
 			sourceTree = "<group>";
 		};
+		1A77039D294A123400C87FA2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1AE0A29C294C8F6D0083BA6C /* Protocols */,
+				1AE0A296294C50170083BA6C /* OpenMarketAPI.swift */,
+				1AE0A292294C4DDE0083BA6C /* HTTPMethod.swift */,
+				1AE0A294294C4E660083BA6C /* Task.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		1AC696F329487841006568EC = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +138,7 @@
 		1AC696FE29487841006568EC /* OpenMarket */ = {
 			isa = PBXGroup;
 			children = (
+				1A77039D294A123400C87FA2 /* Networking */,
 				1A456CBD294882DB00252520 /* Constants */,
 				1A456CB22948822100252520 /* models */,
 				1AC696FF29487841006568EC /* AppDelegate.swift */,
@@ -129,6 +149,14 @@
 				1AC6970D29487842006568EC /* Info.plist */,
 			);
 			path = OpenMarket;
+			sourceTree = "<group>";
+		};
+		1AE0A29C294C8F6D0083BA6C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1AE0A290294C4B890083BA6C /* EndPoint.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +205,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					1A456CC3294884E200252520 = {
 						CreatedOnToolsVersion = 14.1;
@@ -240,12 +268,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE0A295294C4E660083BA6C /* Task.swift in Sources */,
 				1A456CBA2948826400252520 /* Image.swift in Sources */,
 				1A456CBC2948827300252520 /* Vendors.swift in Sources */,
+				1AE0A291294C4B890083BA6C /* EndPoint.swift in Sources */,
+				1AE0A293294C4DDE0083BA6C /* HTTPMethod.swift in Sources */,
 				1A456CB82948825200252520 /* Currency.swift in Sources */,
 				1A456CB62948824100252520 /* Item.swift in Sources */,
 				1A456CBF2948831200252520 /* Decoder.swift in Sources */,
 				1AC6970429487841006568EC /* MainViewController.swift in Sources */,
+				1AE0A297294C50170083BA6C /* OpenMarketAPI.swift in Sources */,
 				1AC6970029487841006568EC /* AppDelegate.swift in Sources */,
 				1A456CB42948823800252520 /* Page.swift in Sources */,
 				1AC6970229487841006568EC /* SceneDelegate.swift in Sources */,
@@ -280,6 +312,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -301,6 +334,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
